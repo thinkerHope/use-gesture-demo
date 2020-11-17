@@ -3,12 +3,12 @@
 import React, { useRef } from 'react'
 import { render } from 'react-dom'
 import { clamp } from './utils/clamp'
-import { swapI } from './utils/swap'
+import { swap } from './utils/swap'
 import { useDrag } from 'react-use-gesture'
 import { useSprings, animated } from 'react-spring'
 
 
-const fn = (order, curIndex, down, originalIndex, y) => index => 
+const fn = (order, curIndex, down, originalIndex) => index => 
   originalIndex === index && down ?
     {
       y: curIndex * 100 + y,
