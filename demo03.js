@@ -37,11 +37,8 @@ function DraggableList({ items }) {
       clamp(Math.round((~~(curIndex / col) * height + y) / height), 0, items.length - 1),
       clamp(Math.round(((curIndex % col) * width + x) / width) , 0, col)
     ]
-    console.log('curPos', curPos)
     let nextIndex = pos2Index(curPos)
-    console.log('nextIndex', nextIndex)
     let newOrder = swap(order.current, curIndex, nextIndex)
-    console.log('newOrder',newOrder)
     setSprings(fn(newOrder, down, originalIndex, curIndex, x, y))
     if (!down) order.current = newOrder
   })
